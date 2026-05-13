@@ -1,0 +1,44 @@
+name: SIBBSSchoolT4Env
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - mamba
+
+dependencies:
+  # Core Python
+  - python=3.9
+
+  # Jupyter environment
+  - jupyterlab
+  - notebook
+  - ipykernel
+
+  # Scientific Python stack
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+
+  # Bioinformatics tools
+  # - busco # let's use docker for this one
+  - omark
+
+  # Common dependencies for BUSCO / OMArk
+#  - hmmer
+#  - diamond
+#  - blast
+#  - augustus
+#  - prodigal
+#  - bbmap
+#  - samtools
+#  - seqkit
+
+  # Utilities
+  - pip
+  - git
+
+  # Install packages not available directly via conda
+  - pip:
+      - fastoma

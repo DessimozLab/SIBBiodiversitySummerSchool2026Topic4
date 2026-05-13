@@ -1,0 +1,11 @@
+numpy<2.0
+pandas<2.2
+matplotlib
+seaborn
+scipy
+biopython
+jupyter
+notebook
+mamba
+
+tables==3.9.2

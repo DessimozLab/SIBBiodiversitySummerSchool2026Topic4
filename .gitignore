@@ -1,0 +1,5 @@
+CommonData/minidataset.tar.gz
+CommonData/minidataset/*
+venv/*
+Module1_AnnotationQuality/out/*
+SIBBSSchoolT4Env/*
