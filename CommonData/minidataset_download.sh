@@ -1,1 +1,1 @@
-wget -h # link
+wget -O minidataset.tar.gz "https://unils-my.sharepoint.com/:u:/g/personal/stefano_pascarelli_unil_ch/IQDM6YYuG6N9Q461o_UEkGquAQQspRoLkrouxjM9DJp5yE8?download=1"
