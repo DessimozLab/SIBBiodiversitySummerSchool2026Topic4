@@ -25,20 +25,6 @@ dependencies:
   # - busco # let's use docker for this one
   - omark
 
-  # Common dependencies for BUSCO / OMArk
-#  - hmmer
-#  - diamond
-#  - blast
-#  - augustus
-#  - prodigal
-#  - bbmap
-#  - samtools
-#  - seqkit
-
   # Utilities
   - pip
   - git
-
-  # Install packages not available directly via conda
-  - pip:
-      - fastoma
