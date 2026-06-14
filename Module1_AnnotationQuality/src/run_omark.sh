@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Number of CPU available
-N_CPU=4
+N_CPU=8
 
 # TAXID PARAMETER!
 TID_PARAM=" -t 32524" # the last common ancestor (Amniota)
@@ -10,12 +10,12 @@ TID_PARAM=" -t 32524" # the last common ancestor (Amniota)
 TMPDIR=/scratch/omark_run/ # set here the tmp folder in the cluster
 SIBBSS_PATH=$(realpath $PWD/../../)  # assuming we are in Module1/src/
 MODULE1_PATH=${SIBBSS_PATH}/Module1_AnnotationQuality
-COMMONDATA_PATH=/vol/CommonDataModule1
+COMMONDATA_PATH=/vol/Topic4CommonData/Module1/
 INPUT_FOLD=${COMMONDATA_PATH}/proteomes/
 
 # activate right conda environment
 eval "$(conda shell.bash hook)"
-conda activate denbi  # put here the name of the env with OMArk
+conda activate SIBBSSchoolT4Env  # put here the name of the env with OMArk
 
 # input genomes list is a csv with genome_path,genome_ID,taxID
 PROTEOME_LIST=$(ls $INPUT_FOLD)

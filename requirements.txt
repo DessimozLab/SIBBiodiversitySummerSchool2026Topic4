@@ -1,5 +1,5 @@
-numpy<2.0
-pandas<2.2
+numpy
+pandas
 matplotlib
 seaborn
 scipy
@@ -7,5 +7,4 @@ biopython
 jupyter
 notebook
 mamba
-
-tables==3.9.2
+tables
