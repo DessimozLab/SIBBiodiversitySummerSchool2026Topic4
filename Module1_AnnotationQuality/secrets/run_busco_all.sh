@@ -21,15 +21,17 @@ SAVED_OUT_FOLD=${MODULE1_PATH}/out/busco/busco_output/
 for current_fasta in $PROTEOME_LIST
 do
   #work dir
-  WORK_DIR=${TMPDIR}/work/$GEN_ID
+  WORK_DIR=${TMPDIR}/$GEN_ID
   mkdir -p $WORK_DIR
   cd $WORK_DIR
+  echo "now we are in $PWD"
   cp ${INPUT_FOLD}/$current_fasta ./
 
+  echo docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
   docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
 
   # copy results and remove temporary output folder
-  echo cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD && rm -r BUSCO_$current_fasta
-  cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD && rm -r BUSCO_$current_fasta
+  echo cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD # && rm -r BUSCO_$current_fasta
+  cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD # && rm -r BUSCO_$current_fasta
 
 done
