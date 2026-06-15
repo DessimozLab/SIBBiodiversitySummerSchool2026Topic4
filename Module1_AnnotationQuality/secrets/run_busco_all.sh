@@ -7,7 +7,7 @@ LINEAGE="-l tetrapoda_odb12.2"
 
 # path to folders
 TMPDIR=~/scratch/busco_run/ # set here the tmp folder in the cluster
-SIBBSS_PATH=$(realpath $PWD/../../)  # assuming we are in Module1/src/
+SIBBSS_PATH=/home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/
 MODULE1_PATH=${SIBBSS_PATH}/Module1_AnnotationQuality
 COMMONDATA_PATH=/vol/Topic4CommonData/shared/
 INPUT_FOLD=${COMMONDATA_PATH}/proteomes/
@@ -24,8 +24,9 @@ do
   WORK_DIR=${TMPDIR}/work/$GEN_ID
   mkdir -p $WORK_DIR
   cd $WORK_DIR
+  cp ${INPUT_FOLD}/$current_fasta ./
 
-  docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i ${INPUT_FOLD}/$current_fasta -m proteins $LINEAGE -c $N_CPU
+  docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
 
   # copy results and remove temporary output folder
   echo cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD && rm -r BUSCO_$current_fasta

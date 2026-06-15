@@ -8,7 +8,7 @@ TID_PARAM=" -t 32524" # the last common ancestor (Amniota)
 
 # path to folders
 TMPDIR=~/scratch/omark_run/ # set here the tmp folder in the cluster
-SIBBSS_PATH=$(realpath $PWD/../../)  # assuming we are in Module1/src/
+SIBBSS_PATH=/home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/
 MODULE1_PATH=${SIBBSS_PATH}/Module1_AnnotationQuality
 COMMONDATA_PATH=/vol/Topic4CommonData/Module1/
 INPUT_FOLD=${COMMONDATA_PATH}/proteomes/

@@ -6,10 +6,10 @@ N_CPU=12
 LINEAGE="-l tetrapoda_odb12.2"
 
 # path to folders
-TMPDIR=~/scratch/omark_run/ # set here the tmp folder in the cluster
-SIBBSS_PATH=$(realpath $PWD/../../)  # assuming we are in Module1/src/
+TMPDIR=~/scratch/busco_run/ # set here the tmp folder in the cluster
+SIBBSS_PATH=/home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/
 MODULE1_PATH=${SIBBSS_PATH}/Module1_AnnotationQuality
-COMMONDATA_PATH=/vol/Topic4CommonData/Module1/
+COMMONDATA_PATH=/vol/Topic4CommonData/shared/
 INPUT_FOLD=${COMMONDATA_PATH}/proteomes/
 
 # input genomes list is the list of proteomes in input folder

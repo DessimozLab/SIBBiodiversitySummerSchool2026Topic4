@@ -4,7 +4,7 @@
 N_CPU=12
 # LINEAGE PARAMETER!
 LINEAGE="-l tetrapoda_odb12.2"
-# INPUT FILE
+# INPUT FILE, must be in the current directory!
 INPUT_FASTA=$1
 
 # ADD YOUR CODE HERE
