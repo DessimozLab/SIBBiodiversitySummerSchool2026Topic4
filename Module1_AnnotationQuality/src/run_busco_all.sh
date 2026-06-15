@@ -3,10 +3,10 @@
 # Number of CPU available
 N_CPU=12
 # LINEAGE PARAMETER!
-LINEAGE="-l tetrapoda_odb12.2"
+LINEAGE="-l /vol/Topic4CommonData/Module1/tetrapoda_odb12.2"
 
 # path to folders
-TMPDIR=~/scratch/busco_run/ # set here the tmp folder in the cluster
+TMPDIR=/scratch/busco_run/ # set here the tmp folder in the cluster
 SIBBSS_PATH=/home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/
 MODULE1_PATH=${SIBBSS_PATH}/Module1_AnnotationQuality
 COMMONDATA_PATH=/vol/Topic4CommonData/shared/
