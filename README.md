@@ -16,17 +16,11 @@ mamba env create -f environment.yml
 
 alternatively...
 ```bash
-python3 -m venv SIBBSSchoolT4Env
+python3 -m venv module1env
 
-source SIBBSSchoolT4Env/bin/activate
+source module1env/bin/activate
 
 pip install --upgrade pip
 
 pip install -r requirements.txt
-```
-
-## to run busco
-```bash
-docker pull ezlabgva/busco:v6.0.0_cv1
-docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.0.0_cv1
 ```

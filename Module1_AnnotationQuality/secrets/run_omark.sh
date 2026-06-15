@@ -11,18 +11,18 @@ INPUT_FASTA=$1
 COMMONDATA_PATH=/vol/Topic4CommonData/shared/
 OMAMER_DB_PATH=${COMMONDATA_PATH}/omamerdb.h5
 # path to omamer results
-OMAMER_OUT=${INPUT_FASTA%.fa}_omamer_output.txt
+OMAMER_OUT=$(basepath ${INPUT_FASTA%.fa})_omamer_output.txt
 
 # if output is not there already
 if [ ! -f $OMAMER_OUT ]
 then
 
    # search with omamer
-   echo   omamer search --db $OMAMER_DB_PATH --query ${INPUT_FOLD}/$current_fasta --nthreads $N_CPU --out $OMAMER_OUT
-   omamer search --db $OMAMER_DB_PATH --query ${INPUT_FOLD}/$current_fasta --nthreads $N_CPU --out $OMAMER_OUT
+   echo   omamer search --db $OMAMER_DB_PATH --query $INPUT_FASTA --nthreads $N_CPU --out $OMAMER_OUT
+   omamer search --db $OMAMER_DB_PATH --query $INPUT_FASTA --nthreads $N_CPU --out $OMAMER_OUT
 
    # run omark
-   echo    omark -f $OMAMER_OUT -d $OMAMER_DB_PATH -o $OUT_DIR -of ${INPUT_FOLD}/$current_fasta  -v $TID_PARAM
-   omark -f $OMAMER_OUT -d $OMAMER_DB_PATH -o $OUT_DIR -of ${INPUT_FOLD}/$current_fasta  -v $TID_PARAM
+   echo    omark -f $OMAMER_OUT -d $OMAMER_DB_PATH -o $OUT_DIR -of $INPUT_FASTA  -v $TID_PARAM
+   omark -f $OMAMER_OUT -d $OMAMER_DB_PATH -o $OUT_DIR -of $INPUT_FASTA  -v $TID_PARAM
 
 fi
