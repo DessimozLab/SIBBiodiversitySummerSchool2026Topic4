@@ -1,0 +1,19 @@
+## Mon Jun 15 11:35:51 2026
+## emapper-2.1.13-60ca345
+## /home/ubuntu/miniconda3/envs/module4env/bin/emapper.py -i test_10_proteins.fa --itype proteins -o test_annotation --data_dir /home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/CommonData/Topic4CommonData/Module4/eggnog_db --tax_scope Vertebrata --cpu 4
+##
+##/home/ubuntu/miniconda3/envs/module4env/lib/python3.9/site-packages/eggnogmapper/bin/diamond blastp -d '/vol/Topic4CommonData/Module4/eggnog_db/eggnog_proteins.dmnd' -q '/home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/Module4_FunctionalAnalysis/step1_annotation/test_10_proteins.fa' --threads 4 -o '/home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/Module4_FunctionalAnalysis/step1_annotation/test_annotation.emapper.hits' --tmpdir '/home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/Module4_FunctionalAnalysis/step1_annotation/emappertmp_dmdn_jo5lm7p0' --sensitive --iterate -e 0.001 --top 3  --outfmt 6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qcovhsp scovhsp
+#qseqid	sseqid	evalue	bitscore	qstart	qend	sstart	send	pident	qcov	scov
+GALGAL_R08064	9031.ENSGALP00000000002	0.0	1319.0	1	674	1	674	100.0	100.0	100.0
+GALGAL_R08065	9031.ENSGALP00000000795	4.95e-93	272.0	7	146	7	146	99.3	95.9	95.9
+GALGAL_R08066	9031.ENSGALP00000035827	3.62e-88	275.0	1	145	12	156	98.6	99.3	23.7
+GALGAL_R08067	9031.ENSGALP00000035827	1.07e-83	264.0	1	145	12	156	93.8	99.3	23.7
+GALGAL_R08068	9031.ENSGALP00000035827	1.37e-84	266.0	1	145	12	156	95.2	99.3	23.7
+GALGAL_R08069	9031.ENSGALP00000001227	0.0	1756.0	1	893	1	893	100.0	100.0	100.0
+GALGAL_R08070	128390.XP_009474752.1	2.34e-267	730.0	1	354	1	354	98.9	100.0	100.0
+GALGAL_R08071	181119.XP_005526606.1	5.74e-61	191.0	1	89	16	104	100.0	100.0	44.3
+GALGAL_R08072	9031.ENSGALP00000027083	2.72e-71	238.0	1	124	127	250	91.9	99.2	8.2
+GALGAL_R08073	9031.ENSGALP00000005392	0.0	1783.0	1	1034	1	944	91.2	100.0	98.1
+## 10 queries scanned
+## Total time (seconds): 0.009816884994506836
+## Rate: 1018.65 q/s
