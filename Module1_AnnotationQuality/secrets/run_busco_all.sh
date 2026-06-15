@@ -3,7 +3,7 @@
 # Number of CPU available
 N_CPU=12
 # LINEAGE PARAMETER!
-LINEAGE="-l /vol/Topic4CommonData/Module1/tetrapoda_odb12.2"
+LINEAGE="-l ./tetrapoda_odb12.2"
 
 # path to folders
 TMPDIR=/scratch/busco_run/ # set here the tmp folder in the cluster
@@ -26,13 +26,16 @@ do
   mkdir -p $WORK_DIR
   cd $WORK_DIR
   echo "now we are in $PWD"
+  # copy fasta here
   cp ${INPUT_FOLD}/$current_fasta ./
+  # copy lineage here
+  cp /vol/Topic4CommonData/Module1/tetrapoda_odb12.2 ./
 
   echo docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
   docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
 
   # copy results and remove temporary output folder
-  echo cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD # && rm -r BUSCO_$current_fasta
-  cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD # && rm -r BUSCO_$current_fasta
+  echo cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD && rm -r BUSCO_$current_fasta && rm -r tetrapoda_odb12.2
+  cp -r BUSCO_$current_fasta $SAVED_OUT_FOLD && rm -r BUSCO_$current_fasta && rm -r tetrapoda_odb12.2
 
 done
