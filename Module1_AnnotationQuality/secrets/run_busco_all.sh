@@ -15,7 +15,7 @@ INPUT_FOLD=${COMMONDATA_PATH}/proteomes/
 # input genomes list is the list of proteomes in input folder
 PROTEOME_LIST=$(ls $INPUT_FOLD)
 # path to output folder
-SAVED_OUT_FOLD=${MODULE1_PATH}/out/omark/omark_output/
+SAVED_OUT_FOLD=${MODULE1_PATH}/out/busco/busco_output/
 
 # Get the file for this  task
 for current_fasta in $PROTEOME_LIST
