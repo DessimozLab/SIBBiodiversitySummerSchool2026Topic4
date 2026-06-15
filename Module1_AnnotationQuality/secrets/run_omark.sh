@@ -11,7 +11,7 @@ INPUT_FASTA=$1
 COMMONDATA_PATH=/vol/Topic4CommonData/shared/
 OMAMER_DB_PATH=${COMMONDATA_PATH}/omamerdb.h5
 # path to omamer results
-OMAMER_OUT=$(basepath ${INPUT_FASTA%.fa})_omamer_output.txt
+OMAMER_OUT=$(basename ${INPUT_FASTA%.fa})_omamer_output.txt
 
 # if output is not there already
 if [ ! -f $OMAMER_OUT ]
