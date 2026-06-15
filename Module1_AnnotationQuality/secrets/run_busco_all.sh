@@ -21,7 +21,7 @@ SAVED_OUT_FOLD=${MODULE1_PATH}/out/busco/busco_output/
 for current_fasta in $PROTEOME_LIST
 do
   #work dir
-  WORK_DIR=${TMPDIR}/$GEN_ID
+  WORK_DIR=${TMPDIR}/${current_fasta%.fa}
   mkdir -p $WORK_DIR
   cd $WORK_DIR
   echo "now we are in $PWD"
