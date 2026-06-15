@@ -1,13 +1,13 @@
 #!/bin/sh
 
 # Number of CPU available
-N_CPU=8
+N_CPU=12
 
 # TAXID PARAMETER!
 TID_PARAM=" -t 32524" # the last common ancestor (Amniota)
 
 # path to folders
-TMPDIR=/scratch/omark_run/ # set here the tmp folder in the cluster
+TMPDIR=~/scratch/omark_run/ # set here the tmp folder in the cluster
 SIBBSS_PATH=$(realpath $PWD/../../)  # assuming we are in Module1/src/
 MODULE1_PATH=${SIBBSS_PATH}/Module1_AnnotationQuality
 COMMONDATA_PATH=/vol/Topic4CommonData/Module1/
@@ -35,30 +35,25 @@ do
   WORK_DIR=${TMPDIR}/work/$GEN_ID
   mkdir -p $WORK_DIR
   cd $WORK_DIR
-  cp $OMAMER_DB_PATH .
 
   # out dir
   OUT_DIR=${TMPDIR}/out/$GEN_ID
   mkdir -p $OUT_DIR
 
   # if output is not there already
-  if [ ! -f $OUT_DIR/omamerized.sum ] && [ ! -f $SAVED_OUT_FOLD/$GEN_ID/omamerized.sum ]
+  if [ ! -f $OUT_DIR/omamer_output.txt ] && [ ! -f $SAVED_OUT_FOLD/$GEN_ID/omamer_output.txt ]
   then
 
      # search with omamer
-     echo   omamer search --db $(basename $OMAMER_DB_PATH) --query ${INPUT_FOLD}/$current_fasta --nthreads $N_CPU --out omamerized.txt
-     omamer search --db $(basename $OMAMER_DB_PATH) --query ${INPUT_FOLD}/$current_fasta --nthreads $N_CPU --out omamerized.txt
+     echo   omamer search --db $OMAMER_DB_PATH --query ${INPUT_FOLD}/$current_fasta --nthreads $N_CPU --out omamer_output.txt
+     omamer search --db $OMAMER_DB_PATH --query ${INPUT_FOLD}/$current_fasta --nthreads $N_CPU --out omamer_output.txt
 
      # run omark
-     echo    omark -f omamerized.txt -d $(basename $OMAMER_DB_PATH) -o $OUT_DIR -of ${INPUT_FOLD}/$current_fasta  -v $TID_PARAM
-     omark -f omamerized.txt -d $(basename $OMAMER_DB_PATH) -o $OUT_DIR -of ${INPUT_FOLD}/$current_fasta  -v $TID_PARAM
+     echo    omark -f omamer_output.txt -d $OMAMER_DB_PATH -o $OUT_DIR -of ${INPUT_FOLD}/$current_fasta  -v $TID_PARAM
+     omark -f omamer_output.txt -d $OMAMER_DB_PATH -o $OUT_DIR -of ${INPUT_FOLD}/$current_fasta  -v $TID_PARAM
 
   fi
 
-  cp -r $OUT_DIR/ $SAVED_OUT_FOLD
-
-  if [ ! -f $SAVED_OUT_FOLD/$GEN_ID/omamerized.sum ]; then
-      cp $OUT_DIR/omamerized.sum $SAVED_OUT_FOLD/$GEN_ID/omamerized.sum
-  fi
+  cp -r $OUT_DIR/ $SAVED_OUT_FOLD && rm $OUT_DIR
 
 done

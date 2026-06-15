@@ -1,6 +1,6 @@
 #!/bin/sh
 
-N_CPU=8
+N_CPU=12
 LINEAGE="-l tetrapoda_odb12.2"
 INPUT_FASTA=$1
 
