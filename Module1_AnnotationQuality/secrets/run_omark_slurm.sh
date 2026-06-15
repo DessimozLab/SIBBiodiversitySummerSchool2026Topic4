@@ -19,7 +19,7 @@ INPUT_FOLD=${COMMONDATA_PATH}/minidataset/proteome/
 
 # activate right conda environment
 eval "$(conda shell.bash hook)"
-conda activate denbi  # put here the name of the env with OMArk
+conda activate module1env  # put here the name of the env with OMArk
 
 # input genomes list is a csv with genome_path,genome_ID,taxID
 PROTEOME_LIST=${COMMONDATA_PATH}/minidataset/proteome_list.txt

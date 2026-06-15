@@ -15,7 +15,7 @@ INPUT_FOLD=${COMMONDATA_PATH}/proteomes/
 
 # activate right conda environment
 eval "$(conda shell.bash hook)"
-conda activate SIBBSSchoolT4Env  # put here the name of the env with OMArk
+conda activate module1env  # put here the name of the env with OMArk
 
 # input genomes list is the list of proteomes in input folder
 PROTEOME_LIST=$(ls $INPUT_FOLD)

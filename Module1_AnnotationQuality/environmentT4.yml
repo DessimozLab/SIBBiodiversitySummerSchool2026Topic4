@@ -1,4 +1,4 @@
-name: SIBBSSchoolT4Env
+name: module1env
 
 channels:
   - conda-forge
