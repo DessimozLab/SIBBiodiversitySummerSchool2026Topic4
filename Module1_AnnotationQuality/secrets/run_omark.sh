@@ -22,7 +22,7 @@ then
    omamer search --db $OMAMER_DB_PATH --query $INPUT_FASTA --nthreads $N_CPU --out $OMAMER_OUT
 
    # run omark
-   echo    omark -f $OMAMER_OUT -d $OMAMER_DB_PATH -o $OUT_DIR -of $INPUT_FASTA  -v $TID_PARAM
-   omark -f $OMAMER_OUT -d $OMAMER_DB_PATH -o $OUT_DIR -of $INPUT_FASTA  -v $TID_PARAM
+   echo    omark -f $OMAMER_OUT -d $OMAMER_DB_PATH -o ./ -of $INPUT_FASTA  -v $TID_PARAM
+   omark -f $OMAMER_OUT -d $OMAMER_DB_PATH -o ./ -of $INPUT_FASTA  -v $TID_PARAM
 
 fi
