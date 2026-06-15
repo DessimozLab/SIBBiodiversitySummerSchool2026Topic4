@@ -17,7 +17,7 @@ INPUT_FOLD=${COMMONDATA_PATH}/proteomes/
 eval "$(conda shell.bash hook)"
 conda activate SIBBSSchoolT4Env  # put here the name of the env with OMArk
 
-# input genomes list is a csv with genome_path,genome_ID,taxID
+# input genomes list is the list of proteomes in input folder
 PROTEOME_LIST=$(ls $INPUT_FOLD)
 # path to omamer
 OMAMER_DB_PATH=${COMMONDATA_PATH}/omamerdb.h5
@@ -54,6 +54,7 @@ do
 
   fi
 
-  cp -r $OUT_DIR/ $SAVED_OUT_FOLD && rm $OUT_DIR
+  # copy results and remove temporary output folder
+  cp -r $OUT_DIR/ $SAVED_OUT_FOLD && rm -r $OUT_DIR
 
 done
