@@ -29,7 +29,7 @@ do
   # copy fasta here
   cp ${INPUT_FOLD}/$current_fasta ./
   # copy lineage here
-  cp /vol/Topic4CommonData/Module1/tetrapoda_odb12.2 ./
+  cp -r /vol/Topic4CommonData/Module1/tetrapoda_odb12.2 ./
 
   echo docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
   docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
