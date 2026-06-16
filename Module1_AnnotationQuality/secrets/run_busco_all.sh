@@ -32,7 +32,7 @@ do
   cp -r /vol/Topic4CommonData/Module1/tetrapoda_odb12.2 ./
 
   echo docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
-  #docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
+  docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $current_fasta -m proteins $LINEAGE -c $N_CPU
 
   # copy results and remove temporary output folder
   echo cp -r ${WORK_DIR}/BUSCO_$current_fasta $SAVED_OUT_FOLD && rm -r tetrapoda_odb12.2 # && rm -r BUSCO_$current_fasta
