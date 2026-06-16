@@ -1,0 +1,10 @@
+Aptenodytes_forsteri.fa,Aptenodytes forsteri,9233
+Columba_livia.fa,Columba livia,8932
+Crocodylus_porosus.fa,Crocodylus porosus,8502
+Gallus_gallus.fa,Gallus gallus,9031
+Grus_americana.fa,Grus americana,9117
+Homo_sapiens.fa,Homo sapiens,9606
+Oreotrochilus_melanogaster.fa,Oreotrochilus melanogaster,689266
+Phoenicopterus_ruber.fa,Phoenicopterus ruber,9217
+Struthio_camelus.fa,Struthio camelus,8801
+Taeniopygia_guttata.fa,Taeniopygia guttata,59729
