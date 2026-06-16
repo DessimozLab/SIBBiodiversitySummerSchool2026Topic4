@@ -10,8 +10,8 @@ TID_PARAM=" -t 32524" # the last common ancestor (Amniota)
 TMPDIR=~/scratch/omark_run/ # set here the tmp folder in the cluster
 SIBBSS_PATH=/home/ubuntu/SIBBiodiversitySummerSchool2026Topic4/
 MODULE1_PATH=${SIBBSS_PATH}/Module1_AnnotationQuality
-COMMONDATA_PATH=/vol/Topic4CommonData/Module1/
-INPUT_FOLD=${COMMONDATA_PATH}/proteomes/
+COMMONDATA_PATH=/vol/Topic4CommonData/
+INPUT_FOLD=${COMMONDATA_PATH}/shared/proteomes/
 
 # activate right conda environment
 eval "$(conda shell.bash hook)"
@@ -20,7 +20,7 @@ conda activate module1env  # put here the name of the env with OMArk
 # input genomes list is the list of proteomes in input folder
 PROTEOME_LIST=$(ls $INPUT_FOLD)
 # path to omamer
-OMAMER_DB_PATH=${COMMONDATA_PATH}/omamerdb.h5
+OMAMER_DB_PATH=${COMMONDATA_PATH}/shared/omamerdb.h5
 # path to intermediate and final output
 OMAMER_FOLD=${MODULE1_PATH}/out/omark/hogmap/
 SAVED_OUT_FOLD=${MODULE1_PATH}/out/omark/omark_output/
