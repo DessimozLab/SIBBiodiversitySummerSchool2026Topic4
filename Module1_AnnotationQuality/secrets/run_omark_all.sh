@@ -24,6 +24,7 @@ OMAMER_DB_PATH=${COMMONDATA_PATH}/shared/omamerdb.h5
 # path to intermediate and final output
 OMAMER_FOLD=${MODULE1_PATH}/out/omark/hogmap/
 SAVED_OUT_FOLD=${MODULE1_PATH}/out/omark/omark_output/
+mkdir -p $SAVED_OUT_FOLD
 
 # Get the file for this array task
 for current_fasta in $PROTEOME_LIST
@@ -35,6 +36,7 @@ do
   WORK_DIR=${TMPDIR}/work/$GEN_ID
   mkdir -p $WORK_DIR
   cd $WORK_DIR
+  echo "we are in $PWD"
 
   # out dir
   OUT_DIR=${TMPDIR}/out/$GEN_ID
