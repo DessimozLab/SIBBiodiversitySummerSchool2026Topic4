@@ -3,8 +3,10 @@
 # Number of CPU available
 N_CPU=12
 # LINEAGE PARAMETER!
-LINEAGE="-l /vol/Topic4CommonData/Module1/tetrapoda_odb12.2"
+LINEAGE="-l tetrapoda_odb12.2"
 # INPUT FILE, must be in the current directory!
 INPUT_FASTA=$1
+# copy lineage here
+cp -r /vol/Topic4CommonData/Module1/tetrapoda_odb12.2 ./
 
 docker run -u $(id -u) -v $(pwd):/busco_wd ezlabgva/busco:v6.1.0_cv1 busco -i $INPUT_FASTA -m proteins $LINEAGE -c $N_CPU

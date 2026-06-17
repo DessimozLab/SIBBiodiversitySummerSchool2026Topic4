@@ -3,7 +3,7 @@
 # Number of CPU available
 N_CPU=12
 # LINEAGE PARAMETER!
-LINEAGE="-l /vol/Topic4CommonData/Module1/tetrapoda_odb12.2"
+LINEAGE="-l tetrapoda_odb12.2"
 
 # path to folders
 TMPDIR=/scratch/busco_run/ # set here the tmp folder in the cluster
@@ -20,6 +20,15 @@ SAVED_OUT_FOLD=${MODULE1_PATH}/out/busco/busco_output/
 # Get the file for this  task
 for current_fasta in $PROTEOME_LIST
 do
+  # create a temporary work directory ready to run busco (including lineage information)
+  WORK_DIR=${TMPDIR}/${current_fasta%.fa}
+  mkdir -p $WORK_DIR
+  cd $WORK_DIR
+  echo "now we are in $PWD"
+  # copy fasta here
+  cp ${INPUT_FOLD}/$current_fasta ./
+  # copy lineage here
+  cp -r /vol/Topic4CommonData/Module1/tetrapoda_odb12.2 ./
   # ADD YOUR CODE HERE
 
   # copy results and remove temporary output folder

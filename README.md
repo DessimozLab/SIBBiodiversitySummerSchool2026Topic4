@@ -3,14 +3,14 @@ Materials for the 2026 summer school
 
 # Environment Setup Instructions
 
-This course uses a Python virtual environment (`venv`) to install the required software.
+This course uses a Conda environment to install the required software.
 
 ## 1. Create the virtual environment
 
 From the root directory of the repository, run:
 ```bash
 conda install -n base -c conda-forge mamba
-mamba env create -f environment.yml
+mamba env create -f Module1_AnnotationQuality/environmentT4.yml
 ```
 
 
