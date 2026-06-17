@@ -3,7 +3,7 @@ Aptenodytes_forsteri	Aptenodytes forsteri	9233
 Columba_livia	Columba livia	8932
 Crocodylus_porosus	Crocodylus porosus	8502
 Gallus_gallus	Gallus gallus	9031
-Gallus_gallus_suspicius	Gallus gallus sub.broiler	9031
+Elachura_formosa	Elachura formosa	1463973
 Grus_americana	Grus americana	9117
 Homo_sapiens	Homo sapiens	9606
 Oreotrochilus_melanogaster	Oreotrochilus melanogaster	689266
