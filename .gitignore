@@ -3,3 +3,6 @@ CommonData/minidataset/*
 venv/*
 Module1_AnnotationQuality/out/*
 SIBBSSchoolT4Env/*
+*/.nextflow.log*
+.nextflow.log*
+CommonData/Topic4CommonData
