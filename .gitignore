@@ -6,3 +6,5 @@ SIBBSSchoolT4Env/*
 */.nextflow.log*
 .nextflow.log*
 CommonData/Topic4CommonData
+.nextflow*
+*/.nextflow*
